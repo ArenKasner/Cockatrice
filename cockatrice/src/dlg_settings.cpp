@@ -162,12 +162,14 @@ GeneralSettingsPage::GeneralSettingsPage()
     pathsGrid->addWidget(&tokenDatabasePathLabel, 5, 0);
     pathsGrid->addWidget(tokenDatabasePathEdit, 5, 1);
     pathsGrid->addWidget(tokenDatabasePathButton, 5, 2);
+
     pathsGroupBox = new QGroupBox;
     pathsGroupBox->setLayout(pathsGrid);
 
     auto *mainLayout = new QVBoxLayout;
     mainLayout->addWidget(personalGroupBox);
     mainLayout->addWidget(pathsGroupBox);
+    mainLayout->addStretch();
 
     setLayout(mainLayout);
 }
@@ -301,6 +303,7 @@ AppearanceSettingsPage::AppearanceSettingsPage()
 
     themeGroupBox = new QGroupBox;
     themeGroupBox->setLayout(themeGrid);
+    themeGroupBox->addStretch();
 
     displayCardNamesCheckBox.setChecked(SettingsCache::instance().getDisplayCardNames());
     connect(&displayCardNamesCheckBox, SIGNAL(stateChanged(int)), &SettingsCache::instance(),
@@ -315,6 +318,7 @@ AppearanceSettingsPage::AppearanceSettingsPage()
 
     cardsGroupBox = new QGroupBox;
     cardsGroupBox->setLayout(cardsGrid);
+    cardsGroupBox->addStretch();
 
     horizontalHandCheckBox.setChecked(SettingsCache::instance().getHorizontalHand());
     connect(&horizontalHandCheckBox, SIGNAL(stateChanged(int)), &SettingsCache::instance(),
@@ -330,6 +334,7 @@ AppearanceSettingsPage::AppearanceSettingsPage()
 
     handGroupBox = new QGroupBox;
     handGroupBox->setLayout(handGrid);
+    handGroupBox->addStretch();
 
     invertVerticalCoordinateCheckBox.setChecked(SettingsCache::instance().getInvertVerticalCoordinate());
     connect(&invertVerticalCoordinateCheckBox, SIGNAL(stateChanged(int)), &SettingsCache::instance(),
@@ -356,6 +361,7 @@ AppearanceSettingsPage::AppearanceSettingsPage()
 
     tableGroupBox = new QGroupBox;
     tableGroupBox->setLayout(tableGrid);
+    tableGroupBox->addStretch();
 
     auto *mainLayout = new QVBoxLayout;
     mainLayout->addWidget(themeGroupBox);
@@ -469,6 +475,7 @@ UserInterfaceSettingsPage::UserInterfaceSettingsPage()
     mainLayout->addWidget(generalGroupBox);
     mainLayout->addWidget(notificationsGroupBox);
     mainLayout->addWidget(animationGroupBox);
+    mainLayout->addStretch();
 
     setLayout(mainLayout);
 }
@@ -583,6 +590,7 @@ DeckEditorSettingsPage::DeckEditorSettingsPage()
     auto *lpMainLayout = new QVBoxLayout;
     lpMainLayout->addWidget(mpGeneralGroupBox);
     lpMainLayout->addWidget(mpSpoilerGroupBox);
+    lpMainLayout->addStretch();
 
     setLayout(lpMainLayout);
 }
@@ -858,6 +866,7 @@ MessagesSettingsPage::MessagesSettingsPage()
     mainLayout->addWidget(messageShortcuts);
     mainLayout->addWidget(chatGroupBox);
     mainLayout->addWidget(highlightGroupBox);
+    mainLayout->addStretch();
 
     setLayout(mainLayout);
 
@@ -1014,6 +1023,7 @@ SoundSettingsPage::SoundSettingsPage()
 
     auto *mainLayout = new QVBoxLayout;
     mainLayout->addWidget(soundGroupBox);
+    mainLayout->addStretch();
 
     setLayout(mainLayout);
 }
@@ -1090,6 +1100,7 @@ ShortcutSettingsPage::ShortcutSettingsPage()
     mainLayout->addWidget(shortcutsTable);
     mainLayout->addWidget(editShortcutGroupBox);
     mainLayout->addLayout(buttonsLayout);
+    mainLayout->addStretch();
 
     setLayout(mainLayout);
 
