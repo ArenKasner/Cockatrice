@@ -1053,7 +1053,7 @@ ShortcutSettingsPage::ShortcutSettingsPage()
     // table
     shortcutsTable = new QTreeWidget();
     shortcutsTable->setColumnCount(2);
-    shortcutsTable->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+    shortcutsTable->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     shortcutsTable->setUniformRowHeights(true);
     shortcutsTable->setAlternatingRowColors(true);
     shortcutsTable->header()->resizeSection(0, shortcutsTable->width() / 3 * 2);
@@ -1099,7 +1099,6 @@ ShortcutSettingsPage::ShortcutSettingsPage()
     mainLayout->addWidget(shortcutsTable);
     mainLayout->addWidget(editShortcutGroupBox);
     mainLayout->addLayout(buttonsLayout);
-    mainLayout->addStretch();
 
     setLayout(mainLayout);
 
