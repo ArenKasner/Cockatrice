@@ -1217,7 +1217,7 @@ DlgSettings::DlgSettings(QWidget *parent) : QDialog(parent)
     QRect rec = QApplication::desktop()->availableGeometry();
 #endif
     this->setMaximumSize(rec.width() - 100, rec.height() - 100);
-    this->setMinimumSize(600,500);
+    this->setMinimumSize(700,600);
 
     connect(&SettingsCache::instance(), SIGNAL(langChanged()), this, SLOT(updateLanguage()));
 
