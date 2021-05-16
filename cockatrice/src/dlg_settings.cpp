@@ -303,6 +303,7 @@ AppearanceSettingsPage::AppearanceSettingsPage()
 
     themeGroupBox = new QGroupBox;
     themeGroupBox->setLayout(themeGrid);
+    themeGroupBox->addStretch();
 
     displayCardNamesCheckBox.setChecked(SettingsCache::instance().getDisplayCardNames());
     connect(&displayCardNamesCheckBox, SIGNAL(stateChanged(int)), &SettingsCache::instance(),
@@ -317,6 +318,7 @@ AppearanceSettingsPage::AppearanceSettingsPage()
 
     cardsGroupBox = new QGroupBox;
     cardsGroupBox->setLayout(cardsGrid);
+    cardsGroupBox->addStretch();
 
     horizontalHandCheckBox.setChecked(SettingsCache::instance().getHorizontalHand());
     connect(&horizontalHandCheckBox, SIGNAL(stateChanged(int)), &SettingsCache::instance(),
@@ -332,6 +334,7 @@ AppearanceSettingsPage::AppearanceSettingsPage()
 
     handGroupBox = new QGroupBox;
     handGroupBox->setLayout(handGrid);
+    handGroupBox->addStretch();
 
     invertVerticalCoordinateCheckBox.setChecked(SettingsCache::instance().getInvertVerticalCoordinate());
     connect(&invertVerticalCoordinateCheckBox, SIGNAL(stateChanged(int)), &SettingsCache::instance(),
@@ -358,13 +361,13 @@ AppearanceSettingsPage::AppearanceSettingsPage()
 
     tableGroupBox = new QGroupBox;
     tableGroupBox->setLayout(tableGrid);
+    tableGroupBox->addStretch();
 
     auto *mainLayout = new QVBoxLayout;
     mainLayout->addWidget(themeGroupBox);
     mainLayout->addWidget(cardsGroupBox);
     mainLayout->addWidget(handGroupBox);
     mainLayout->addWidget(tableGroupBox);
-    mainLayout->addStretch();
 
     setLayout(mainLayout);
 }
@@ -1216,8 +1219,8 @@ DlgSettings::DlgSettings(QWidget *parent) : QDialog(parent)
 #else
     QRect rec = QApplication::desktop()->availableGeometry();
 #endif
-    this->setMinimumSize(rec.width() / 2, rec.height() - 100);
-    this->setBaseSize(rec.width(), rec.height());
+    this->setMaximumSize(rec.width() - 100, rec.height() - 100);
+    this->setMinimumSize(600,500);
 
     connect(&SettingsCache::instance(), SIGNAL(langChanged()), this, SLOT(updateLanguage()));
 
