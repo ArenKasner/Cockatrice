@@ -538,12 +538,15 @@ DeckEditorSettingsPage::DeckEditorSettingsPage()
 
     auto aAdd = new QAction(this);
     aAdd->setIcon(QPixmap("theme:icons/increment"));
+    aAdd->setToolTip(tr("Add New Message"));
     connect(aAdd, SIGNAL(triggered()), this, SLOT(actAddURL()));
     auto aEdit = new QAction(this);
     aEdit->setIcon(QPixmap("theme:icons/pencil"));
+    aEdit->setToolTip(tr("Edit Message"));
     connect(aEdit, SIGNAL(triggered()), this, SLOT(actEditURL()));
     auto aRemove = new QAction(this);
     aRemove->setIcon(QPixmap("theme:icons/decrement"));
+    aRemove->setToolTip(tr("Remove Message"));
     connect(aRemove, SIGNAL(triggered()), this, SLOT(actRemoveURL()));
 
     auto *messageToolBar = new QToolBar;
@@ -832,16 +835,15 @@ MessagesSettingsPage::MessagesSettingsPage()
 
     aAdd = new QAction(this);
     aAdd->setIcon(QPixmap("theme:icons/increment"));
-    aAdd->setStatusTip(tr("Add New URL"));
-
+    aAdd->setToolTip(tr("Add New URL"));
     connect(aAdd, SIGNAL(triggered()), this, SLOT(actAdd()));
     aEdit = new QAction(this);
     aEdit->setIcon(QPixmap("theme:icons/pencil"));
-    aEdit->setStatusTip(tr("Edit URL"));
+    aEdit->setToolTip(tr("Edit URL"));
     connect(aEdit, SIGNAL(triggered()), this, SLOT(actEdit()));
     aRemove = new QAction(this);
     aRemove->setIcon(QPixmap("theme:icons/decrement"));
-    aRemove->setStatusTip(tr("Remove URL"));
+    aRemove->setToolTip(tr("Remove URL"));
     connect(aRemove, SIGNAL(triggered()), this, SLOT(actRemove()));
 
     auto *messageToolBar = new QToolBar;
