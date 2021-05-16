@@ -1053,7 +1053,7 @@ ShortcutSettingsPage::ShortcutSettingsPage()
     // table
     shortcutsTable = new QTreeWidget();
     shortcutsTable->setColumnCount(2);
-    shortcutsTable->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+    shortcutsTable->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
     shortcutsTable->setUniformRowHeights(true);
     shortcutsTable->setAlternatingRowColors(true);
     shortcutsTable->header()->resizeSection(0, shortcutsTable->width() / 3 * 2);
