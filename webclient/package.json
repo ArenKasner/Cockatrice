@@ -21,7 +21,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "postinstall": "echo 'Copying shared files...' && ./copy_shared_files.sh",
+    "postinstall": "echo 'Copying shared files...' && ./copy_shared_files.ps1",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

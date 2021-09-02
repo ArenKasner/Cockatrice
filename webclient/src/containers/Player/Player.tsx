@@ -1,17 +1,29 @@
 // eslint-disable-next-line
 import React, { Component } from "react";
-
+import { connect } from "react-redux";
+import { withRouter /*, RouteComponentProps */, generatePath } from "react-router-dom";
+import { RoomsStateMessages, RoomsStateRooms, JoinedRooms, RoomsSelectors } from "store";
 import { AuthGuard } from "components";
 
-class Player extends Component {
-  render() {
+const Player = props => {
+
+     console.log(props);
     return (
-      <div>
-        <AuthGuard />
-        <span>"Player"</span>
-      </div>
+        <div>
+            <AuthGuard />
+            <span>"Player"</span>
+            <span> {props.name} </span>
+
+        </div>
     )
-  }
+
 }
 
-export default Player;
+
+const mapStateToProps = state => ({
+    
+    
+});
+
+
+export default withRouter(connect(mapStateToProps)(Player));
